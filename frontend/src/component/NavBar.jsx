@@ -36,15 +36,15 @@ export default function Navbar() {
     <>
       {" "}
       <div
-        className={`w-full h-[80px]  fixed top-0 left-0 px-4 lg:px-32 flex items-center justify-between  ${
+        className={`w-full h-[80px]  fixed top-0 left-0 px-4 lg:px-24 flex items-center justify-between  ${
           isScrolled
             ? "bg-normalBlue shadow-lg transform transition duration-700"
-            : "bg-normalBlue"
+            : "bg-transparent"
         }`}
       >
         <div>logo</div>
         <div className="hidden lg:block">
-          <ul className="flex gap-8 font-bold text-white tracking-widest">
+          <ul className="flex gap-8 font-bold text-white text-lg font-roboto tracking-widest">
             {list.map((item, index) => (
               <li key={index}>
                 <a

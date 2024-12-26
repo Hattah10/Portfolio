@@ -13,7 +13,12 @@ module.exports = {
         darkBlue: "#437FC7",
         normalBlue: "#6daffe",
         lightBlue: "#edf6ff",
-        darkBrown: "b9732f",
+        darkBrown: "#b9732f",
+      },
+      screens: {
+        xs: "375px",
+        "2xl": "1440px",
+        "3xl": "1536px",
       },
     },
   },
