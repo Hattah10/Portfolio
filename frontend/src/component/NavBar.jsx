@@ -38,13 +38,13 @@ export default function Navbar() {
       <div
         className={`w-full h-[80px]  fixed top-0 left-0 px-4 lg:px-24 flex items-center justify-between  ${
           isScrolled
-            ? "bg-normalBlue shadow-lg transform transition duration-700"
+            ? "bg-normalBlue backdrop-blur-sm  transform transition duration-700"
             : "bg-transparent"
         }`}
       >
         <div>logo</div>
         <div className="hidden lg:block">
-          <ul className="flex gap-8 font-bold text-white text-lg font-roboto tracking-widest">
+          <ul className="flex gap-8 font-medium text-white text-lg font-roboto tracking-widest">
             {list.map((item, index) => (
               <li key={index}>
                 <a
@@ -56,6 +56,11 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+        </div>
+        <div>
+          <button className="border-2 px-3 py-1 rounded-lg border-white text-white hover:border-b-4 hover:border-r-4 ">
+            Resume
+          </button>
         </div>
         {/* mobile menu */}
         <div
