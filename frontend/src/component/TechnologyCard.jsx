@@ -40,8 +40,6 @@ export default function TechnologyCard({ row }) {
             <span>{item.name}</span>
           </div>
         ))}
-
-      <div></div>
     </>
   );
 }

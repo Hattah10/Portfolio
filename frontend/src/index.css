@@ -9,6 +9,9 @@ html {
   scroll-behavior: smooth;
 }
 
+.sectionPadding {
+  padding: 80px 192px 80px 192px;
+}
 section {
   height: 100vh;
   padding: 0px 192px 0px 192px;
@@ -24,3 +27,18 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
+
+.tooltip {
+  background-color: #707070 !important;
+  color: #fff;
+  font-size: 10px !important;
+  line-height: 1.5;
+
+  padding: 4px 6px !important;
+}
+/* .tooltip-top {
+  font-size: 10px !important;
+
+  padding: 4px 6px !important;
+  line-height: 1.5;
+} */

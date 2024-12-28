@@ -38,7 +38,7 @@ export default function Navbar() {
       <div
         className={`w-full h-[80px]  fixed top-0 left-0 px-4 lg:px-24 flex items-center justify-between  ${
           isScrolled
-            ? "bg-normalBlue backdrop-blur-sm  transform transition duration-700"
+            ? "bg-normalBlue backdrop-blur-sm  transform transition duration-700 hidden"
             : "bg-transparent"
         }`}
       >

@@ -38,7 +38,7 @@ export default function AboutMe() {
           </div>
         </div>
       </div>
-      <div className="px-10 ">
+      <div className="px-10 py-10">
         <h3 className=" text-2xl font-semibold text-black mb-5 text-center">
           Technologies I used
         </h3>

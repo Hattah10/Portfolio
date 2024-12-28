@@ -20,6 +20,9 @@ module.exports = {
         "2xl": "1440px",
         "3xl": "1536px",
       },
+      boxShadow: {
+        blue: "0 4px 6px #437FC7", // Custom blue shadow
+      },
     },
   },
   plugins: [],
