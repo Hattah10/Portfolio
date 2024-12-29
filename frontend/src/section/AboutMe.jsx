@@ -1,14 +1,18 @@
 import React from "react";
 import TechnologyCard from "../component/TechnologyCard";
 import profile from "../assets/images/profile.jpg";
+import Profile from "../component/Profile";
 export default function AboutMe() {
   return (
-    <div className="max-w-screen-2xl 3xl:m-auto px-48 ">
-      <div className="flex gap-20 pt-20 pb-16">
-        <div className="w-1/2">
+    <div className="max-w-screen-2xl 3xl:m-auto px-6 md:px-16 lg:px-48  ">
+      <div className="flex flex-col lg:flex-row gap-20 pt-20 pb-16">
+        <div className="w-full lg:w-1/2">
           <div className="flex items-center gap-10">
             <h1 className=" text-5xl font-semibold text-black">About Me</h1>
             <hr className="flex-1 w-full h-1 rounded-lg bg-lightBlue" />
+          </div>
+          <div className="flex items-center justify-center lg:hidden my-12">
+            <Profile />
           </div>
           <div className="grid gap-5 text-lg mt-10 text-pretty ">
             {" "}
@@ -27,18 +31,13 @@ export default function AboutMe() {
             <p>Simply put, I love programming!</p>
           </div>
         </div>
-        <div className="flex-1 flex items-center justify-center ">
-          <div className=" w-[300px] h-[350px] rounded-tl-[40px] rounded-br-[40px]  shadow-2xl ">
-            {" "}
-            <img
-              src={profile}
-              alt=""
-              className="w-full h-full object-cover object-center   rounded-tl-[40px] rounded-br-[40px] hover:rounded-none duration-500"
-            />
+        <div className="flex-1 hidden lg:block ">
+          <div className="flex items-center justify-center ">
+            <Profile />
           </div>
         </div>
       </div>
-      <div className="px-10 py-10">
+      <div className="lg:px-10 py-10">
         <h3 className=" text-2xl font-semibold text-black mb-5 text-center">
           Technologies I used
         </h3>

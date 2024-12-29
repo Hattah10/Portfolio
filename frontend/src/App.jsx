@@ -11,8 +11,8 @@ function App() {
       <SocialMedia />
       <Navbar />
       <Home />
-      {/* <AboutMe />
-      <Project />
+      <AboutMe />
+      {/* <Project />
       <ContactMe /> */}
     </main>
   );
