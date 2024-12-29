@@ -7,13 +7,13 @@ import Project from "./section/Project";
 
 function App() {
   return (
-    <main className="w-full relative  bg-white-100 font-poppins">
+    <main className="w-full   relative  bg-white-100 font-poppins">
       <SocialMedia />
       <Navbar />
       <Home />
       <AboutMe />
       <Project />
-      {/* <ContactMe /> */}
+      <ContactMe />
     </main>
   );
 }

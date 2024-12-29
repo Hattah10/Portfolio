@@ -55,7 +55,7 @@ export default function Project() {
     },
   ];
   return (
-    <div className=" sectionPadding ">
+    <div className="max-w-screen-2xl 3xl:m-auto  sectionPadding ">
       {" "}
       <h1 className=" text-5xl font-semibold text-black">Recent Project</h1>
       {recentProject.map((item, index) => {

@@ -19,9 +19,13 @@ module.exports = {
         xs: "375px",
         "2xl": "1440px",
         "3xl": "1536px",
+        // "4xl": "153px",
       },
       boxShadow: {
         blue: "0 4px 6px #437FC7", // Custom blue shadow
+      },
+      backgroundImage: {
+        "button-gradient": "linear-gradient(to right, #437FC7, #6daffe)",
       },
     },
   },

@@ -3,7 +3,7 @@ import TechnologyCard from "../component/TechnologyCard";
 import profile from "../assets/images/profile.jpg";
 export default function AboutMe() {
   return (
-    <div className=" px-48 ">
+    <div className="max-w-screen-2xl 3xl:m-auto px-48 ">
       <div className="flex gap-20 pt-20 pb-16">
         <div className="w-1/2">
           <div className="flex items-center gap-10">

@@ -1,8 +1,9 @@
 import React from "react";
+import SocialMedia from "../component/SocialMedia";
 
 export default function Home() {
   return (
-    <section className=" flex items-center lg:px-48 pt-[80px]">
+    <section className="max-w-screen-2xl 3xl:m-auto flex items-center lg:px-48 pt-[80px] ">
       {/* wave */}
       <div className="w-full absolute lg:-top-5 -top-5 left-0 right-0 -z-10">
         {/*desktop  */}
