@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Resume from "./Resume";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,7 +44,7 @@ export default function Navbar() {
         }`}
       >
         <div
-          className={`w-full max-w-screen-2xl 3xl:m-auto  h-full px-4 lg:px-24 flex items-center justify-between  `}
+          className={`w-full max-w-screen-2xl 3xl:m-auto  h-full px-6 md:px-16 lg:px-10 flex items-center justify-between  `}
         >
           <div>logo</div>
           <div className="hidden lg:block">
@@ -60,10 +61,8 @@ export default function Navbar() {
               ))}
             </ul>
           </div>
-          <div>
-            <button className="border-2 px-3 py-1 rounded-lg border-white text-white hover:border-b-4 hover:border-r-4 ">
-              Resume
-            </button>
+          <div className="hidden lg:block">
+            <Resume />
           </div>
           {/* mobile menu */}
           <div
@@ -72,20 +71,26 @@ export default function Navbar() {
           >
             {" "}
             {isMenuOpen ? (
-              <i className="bx bx-x text-5xl text-white transform transition-all duration-500 ease-in-out opacity-100 scale-100"></i>
+              <i className="bx bx-x text-5xl text-white transform transition-all duration-700 ease-in-out opacity-100 scale-100"></i>
             ) : (
-              <i className="bx bx-menu-alt-right text-5xl text-white transform transition-all duration-500 ease-in-out opacity-100 scale-100"></i>
+              <i className="bx bx-menu-alt-right text-5xl text-white transform transition-all duration-700 ease-in-out opacity-100 scale-100"></i>
             )}
           </div>
         </div>
+        {/* bg */}
         <div
-          className={`w-full h-screen absolute top-0 left-0 pt-[80px] text-white transform -z-10 ${
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } w-full h-screen bg-gray-700 opacity-40 transition-transform duration-500 absolute top-0 left-0`}
+        ></div>
+        <div
+          className={`w-full h-screen absolute top-0 right-0    text-white transform z-10 ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
-          } transition-transform duration-500 ease-in-out lg:hidden`}
+          } transition-transform duration-500 ease-in-out lg:hidden flex justify-end`}
         >
-          <div className="bg-darkBlue h-full">
+          <div className="bg-darkBlue h-full pt-[100px] w-[80%] z-20">
             {" "}
-            <ul className="flex flex-col text-center gap-y-8 font-bold text-white tracking-widest">
+            <ul className=" w-full flex flex-col text-center gap-y-10 font-bold text-white md:text-lg font-roboto tracking-widest">
               {list.map((item, index) => (
                 <li key={index} className="px-8">
                   <a
@@ -97,6 +102,11 @@ export default function Navbar() {
                   </a>
                 </li>
               ))}
+              <div className="w-full">
+                <button className="border-2 px-3 py-1 rounded-lg border-white text-white hover:border-b-4 hover:border-r-4 ">
+                  Resume
+                </button>
+              </div>
             </ul>
           </div>{" "}
         </div>

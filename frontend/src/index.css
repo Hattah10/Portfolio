@@ -9,15 +9,15 @@ html {
   scroll-behavior: smooth;
 }
 
-.sectionPadding {
+/* .sectionPadding {
   padding: 80px 192px 80px 192px;
 }
 section {
   height: 100vh;
-  padding: 0px 192px 0px 192px;
-  /* padding-top: 80px; */
-  /* scroll-snap-align: center; */
-}
+  padding: 80px 192px;
+  / /padding-top: 80px; 
+  // scroll-snap-align: center; 
+} */
 
 .glassmorphism {
   backdrop-filter: blur(10px) saturate(150%);
@@ -33,12 +33,17 @@ section {
   color: #fff;
   font-size: 10px !important;
   line-height: 1.5;
-
   padding: 4px 6px !important;
 }
-/* .tooltip-top {
-  font-size: 10px !important;
 
-  padding: 4px 6px !important;
-  line-height: 1.5;
-} */
+/*
+@media screen and (min-width: 320px) {
+  .sectionPadding {
+    padding: 80px 24px;
+  }
+  section {
+    height: auto;
+    padding: 10px 24px;
+  }
+}
+*/
