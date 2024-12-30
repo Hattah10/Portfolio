@@ -1,8 +1,44 @@
-import React from "react";
+import React, { useRef } from "react";
 import HeadingSection from "../component/HeadingSection";
 import InputContainer from "../component/InputContainer";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 
 export default function ContactMe() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    const serviceId = process.env.REACT_APP_SERVICE_ID;
+    const templateId = process.env.REACT_APP_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_PUBLIC_KEY;
+
+    // Create a promise-based email sending function
+    const sendEmailPromise = emailjs.sendForm(
+      serviceId,
+      templateId,
+      form.current,
+      {
+        publicKey: publicKey,
+      }
+    );
+
+    // Show the loading, success, or error toast using toast.promise
+    toast.promise(
+      sendEmailPromise, // The promise to handle
+      {
+        loading: "Sending your message...", // Toast message for loading
+        success: "Message sent successfully!", // Toast message for success
+        error: "Failed to send message. Please try again later.", // Toast message for error
+      }
+    );
+
+    // Reset form after email is successfully sent (no need to chain .then)
+    sendEmailPromise.then(() => {
+      form.current.reset(); // Reset form after success
+    });
+  };
   return (
     <section
       id="contact"
@@ -29,7 +65,8 @@ export default function ContactMe() {
             </p>{" "}
           </div>
           <form
-            action="post"
+            ref={form}
+            onSubmit={sendEmail}
             className="w-full max-w-sm
            m-auto "
           >
@@ -37,17 +74,17 @@ export default function ContactMe() {
               {" "}
               <InputContainer
                 placeholder={"Name"}
-                id={"name"}
+                id={"from_name"}
                 type={"text"}
               />{" "}
               <InputContainer
                 placeholder={"Email"}
                 id={"email"}
-                type={"text"}
+                type={"email"}
               />
               <InputContainer
                 placeholder={"Subject"}
-                id={"name"}
+                id={"subject"}
                 type={"text"}
               />
               <textarea
@@ -56,6 +93,7 @@ export default function ContactMe() {
                 rows={5}
                 className="w-full resize-none rounded p-2 border-2 border-gray-200 focus:outline-none focus:shadow-blue "
                 placeholder="Message"
+                required
               ></textarea>
               <div className="w-full">
                 {" "}
