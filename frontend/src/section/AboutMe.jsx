@@ -4,7 +4,10 @@ import profile from "../assets/images/profile.jpg";
 import Profile from "../component/Profile";
 export default function AboutMe() {
   return (
-    <div className="max-w-screen-2xl 3xl:m-auto px-6 md:px-16 lg:px-48  ">
+    <section
+      id="about"
+      className="max-w-screen-2xl 3xl:m-auto px-6 md:px-16 lg:px-48  "
+    >
       <div className="flex flex-col lg:flex-row gap-20 pt-20 pb-16">
         <div className="w-full lg:w-1/2">
           <div className="flex items-center gap-10">
@@ -54,6 +57,6 @@ export default function AboutMe() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

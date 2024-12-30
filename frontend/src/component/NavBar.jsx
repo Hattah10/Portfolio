@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import Resume from "./Resume";
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
-
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,11 +37,47 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   const list = [
-    { name: "Home", route: "#Home" },
-    { name: "About Me", route: "#AboutMe" },
-    { name: "Project", route: "#Project" },
-    { name: "Contact", route: "#Contact" },
+    { name: "Home", route: "#home" },
+    { name: "About Me", route: "#about" },
+    { name: "Project", route: "#project" },
+    { name: "Contact", route: "#contact" },
   ];
+
+  useEffect(() => {
+    const sectionElements = list.map((item) =>
+      document.querySelector(item.route)
+    );
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3, // Trigger when 60% of the section is visible
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    sectionElements.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sectionElements.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, [list]);
+
   // Disable scrolling when menu is open
   useEffect(() => {
     if (isMenuOpen) {
@@ -73,7 +108,11 @@ export default function Navbar() {
                 <li key={index}>
                   <a
                     href={item.route}
-                    className=" border-b-2 border-transparent hover:border-white transition-transform duration-700"
+                    className={`border-b-2 transition-transform duration-700 ${
+                      activeSection === item.route.slice(1) // Remove "#" to match section IDs
+                        ? "border-white"
+                        : "border-transparent hover:border-white"
+                    }`}
                   >
                     {item.name}
                   </a>
@@ -116,7 +155,11 @@ export default function Navbar() {
                   <a
                     onClick={() => setIsMenuOpen(false)}
                     href={item.route}
-                    className=" border-b-2 border-transparent hover:border-white transition-transform duration-700"
+                    className={`border-b-2 transition-transform duration-700 ${
+                      activeSection === item.route.slice(1) // Remove "#" to match section IDs
+                        ? "border-white"
+                        : "border-transparent hover:border-white"
+                    }`}
                   >
                     {item.name}
                   </a>

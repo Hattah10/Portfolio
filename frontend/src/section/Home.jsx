@@ -5,7 +5,10 @@ import MobileWave from "../component/wave/MobileWave";
 
 export default function Home() {
   return (
-    <section className="max-w-screen-2xl 3xl:m-auto min-h-screen flex items-center  px-6 md:px-16 lg:px-48 pt-28 md:pt-32 lg:pt-[80px]">
+    <section
+      id="home"
+      className="max-w-screen-2xl 3xl:m-auto min-h-screen flex items-center  px-6 md:px-16 lg:px-48 pt-28 md:pt-32 lg:pt-[80px]"
+    >
       {/* wave */}
       <div className="w-full absolute lg:-top-5 -top-5 md:-top-24 left-0 right-0 -z-10">
         {/*desktop  */}

@@ -55,14 +55,20 @@ export default function Project() {
     },
   ];
   return (
-    <div className="max-w-screen-2xl 3xl:m-auto  px-6 md:px-16 lg:px-48 py-20 ">
+    <section
+      id="project"
+      className="max-w-screen-2xl 3xl:m-auto min-h-screen  px-6 md:px-16 lg:px-48 py-20 "
+    >
       {" "}
       <h1 className=" text-4xl lg:text-5xl font-semibold text-black pb-10">
         Recent Project
       </h1>
-      {recentProject.map((item, index) => {
-        return <StackCard key={index} {...item} />;
-      })}
+      <div>
+        {" "}
+        {recentProject.map((item, index) => {
+          return <StackCard key={index} {...item} />;
+        })}
+      </div>
       <div className=" flex flex-col gap-3 items-center justify-center py-14">
         <h1 className="text-3xl font-semibold text-black">Academic Projects</h1>
         <hr className=" w-60 border-2 rounded-[100px]  border-normalBlue" />
@@ -72,6 +78,6 @@ export default function Project() {
           return <AcademicProjectCard key={index} {...item} />;
         })}
       </div>
-    </div>
+    </section>
   );
 }

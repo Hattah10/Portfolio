@@ -4,7 +4,10 @@ import InputContainer from "../component/InputContainer";
 
 export default function ContactMe() {
   return (
-    <section className="bg-lightBlue px-6 md:px-16 lg:px-48  py-20 lg:pt-20 relative z-10 ">
+    <section
+      id="contact"
+      className="bg-lightBlue px-6 md:px-16 lg:px-48  py-20 lg:pt-20 relative z-10 "
+    >
       <div className="w-full h-auto flex justify-center ">
         <div className=" w-full max-w-2xl bg-white shadow-xl px-5 py-10 lg:p-10 border-t-8 border-darkBlue rounded-2xl">
           {/*  */}
