@@ -1,5 +1,4 @@
 import React from "react";
-import SocialMedia from "../component/SocialMedia";
 import DesktopWave from "../component/wave/DesktopWave";
 import MobileWave from "../component/wave/MobileWave";
 

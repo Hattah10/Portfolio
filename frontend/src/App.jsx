@@ -4,6 +4,7 @@ import AboutMe from "./section/AboutMe";
 import ContactMe from "./section/ContactMe";
 import Home from "./section/Home";
 import Project from "./section/Project";
+import Technology from "./section/Technology";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <Home />
       <AboutMe />
+      <Technology />
       <Project />
       <ContactMe />
     </main>

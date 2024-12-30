@@ -1,8 +1,6 @@
 import React from "react";
 import profile from "../assets/images/profile.jpg";
 import StackCard from "../component/StackCard";
-import StackCardLink from "../component/StackCardLink";
-import ToolTag from "../component/ToolTag";
 import AcademicProjectCard from "../component/AcademicProjectCard";
 export default function Project() {
   const recentProject = [
