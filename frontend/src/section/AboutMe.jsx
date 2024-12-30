@@ -8,7 +8,9 @@ export default function AboutMe() {
       <div className="flex flex-col lg:flex-row gap-20 pt-20 pb-16">
         <div className="w-full lg:w-1/2">
           <div className="flex items-center gap-10">
-            <h1 className=" text-5xl font-semibold text-black">About Me</h1>
+            <h1 className=" text-4xl lg:text-5xl font-semibold text-black">
+              About Me
+            </h1>
             <hr className="flex-1 w-full h-1 rounded-lg bg-lightBlue" />
           </div>
           <div className="flex items-center justify-center lg:hidden my-12">

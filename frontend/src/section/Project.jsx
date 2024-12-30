@@ -55,17 +55,19 @@ export default function Project() {
     },
   ];
   return (
-    <div className="max-w-screen-2xl 3xl:m-auto  sectionPadding ">
+    <div className="max-w-screen-2xl 3xl:m-auto  px-6 md:px-16 lg:px-48 py-20 ">
       {" "}
-      <h1 className=" text-5xl font-semibold text-black">Recent Project</h1>
+      <h1 className=" text-4xl lg:text-5xl font-semibold text-black pb-10">
+        Recent Project
+      </h1>
       {recentProject.map((item, index) => {
         return <StackCard key={index} {...item} />;
       })}
-      <div className=" flex flex-col gap-3 items-center justify-center">
+      <div className=" flex flex-col gap-3 items-center justify-center py-14">
         <h1 className="text-3xl font-semibold text-black">Academic Projects</h1>
         <hr className=" w-60 border-2 rounded-[100px]  border-normalBlue" />
       </div>
-      <div className=" grid grid-cols-3 gap-5 my-10">
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {academicProject.map((item, index) => {
           return <AcademicProjectCard key={index} {...item} />;
         })}

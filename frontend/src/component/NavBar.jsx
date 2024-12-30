@@ -4,17 +4,38 @@ import Resume from "./Resume";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(true);
+
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // User is scrolling down
+        setIsNavbarVisible(false);
+      } else {
+        // User is scrolling up
+        setIsNavbarVisible(true);
+      }
+      // Handle Navbar Background Transparency
+      if (currentScrollY > 0) {
+        setIsTransparent(false);
+      } else {
+        setIsTransparent(true);
+      }
+
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [lastScrollY]);
 
   const list = [
     { name: "Home", route: "#Home" },
@@ -37,14 +58,13 @@ export default function Navbar() {
     <>
       {" "}
       <div
-        className={`w-full h-[80px]  fixed top-0 left-0 z-50  ${
-          isScrolled
-            ? "bg-normalBlue backdrop-blur-sm  transform transition duration-700 "
-            : "bg-transparent"
-        }`}
+        className={`w-full h-16
+           md:h-[80px]  fixed top-0 left-0 z-50  transition-transform duration-500 ease-in-out  ${
+             isNavbarVisible ? "translate-y-0" : "-translate-y-full"
+           } ${isTransparent ? "bg-transparent" : "bg-button-gradient"}`}
       >
         <div
-          className={`w-full max-w-screen-2xl 3xl:m-auto  h-full px-6 md:px-16 lg:px-10 flex items-center justify-between  `}
+          className={`w-full max-w-screen-2xl 3xl:m-auto  h-full px-6  lg:px-10 flex items-center justify-between  `}
         >
           <div>logo</div>
           <div className="hidden lg:block">
