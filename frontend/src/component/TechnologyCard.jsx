@@ -29,12 +29,15 @@ export default function TechnologyCard({ row }) {
         .map((item, index) => (
           <div
             key={index}
-            className="capitalize  px-3 py-2 bg-lightBlue rounded-xl font-medium tracking-widest font-montserrat text-gray-700 flex items-center gap-1"
+            className="capitalize w-full  px-3 py-2 bg-lightBlue rounded-xl font-medium tracking-widest font-montserrat text-gray-700 flex items-center gap-1"
           >
             {item.icon ? (
               <i className={`${item.icon} text-4xl text-normalBlue`}></i>
             ) : item.image ? (
-              <img src={item.image} alt="icon" className="w-10 h-10" />
+              <img
+                src={item.image}
+                className=" w-5 h-5 lg:w-10 lg:h-10 shrink-0"
+              />
             ) : null}
 
             <span>{item.name}</span>
