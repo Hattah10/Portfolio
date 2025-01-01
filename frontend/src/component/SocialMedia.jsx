@@ -22,7 +22,10 @@ export default function SocialMedia() {
     },
   ];
   return (
-    <div className="  h-auto fixed bottom-0 left-20 hidden lg:block ">
+    <div
+      data-aos="fade-up"
+      className="  h-auto fixed bottom-0 left-20 hidden lg:block z-50"
+    >
       {" "}
       <div className=" max-w-screen-2xl flex flex-col items-center gap-5">
         <div className="  flex flex-col gap-3 text-darkBlue">

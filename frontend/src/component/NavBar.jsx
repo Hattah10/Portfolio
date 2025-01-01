@@ -99,9 +99,10 @@ export default function Navbar() {
            } ${isTransparent ? "bg-transparent" : "bg-button-gradient"}`}
       >
         <div
+          data-aos="fade-down"
           className={`w-full max-w-screen-2xl 3xl:m-auto  h-full px-6  lg:px-10 flex items-center justify-between  `}
         >
-          <div>logo</div>
+          <div>N.</div>
           <div className="hidden lg:block">
             <ul className="flex gap-8 font-medium text-white text-lg font-roboto tracking-widest">
               {list.map((item, index) => (

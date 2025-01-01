@@ -29,7 +29,7 @@ export default function Project() {
         style={{ scale, opacity }}
         className=" sticky flex justify-start w-full top-5 lg:top-8 pb-12 lg:pb-20 -z-10"
       >
-        <h1 className="text-5xl lg:text-7xl font-semibold text-black text-left">
+        <h1 className="text-5xl lg:text-6xl font-semibold text-black text-left">
           Recent Project
         </h1>
       </motion.div>

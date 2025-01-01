@@ -4,7 +4,10 @@ import StackCardLink from "./StackCardLink";
 
 export default function AcademicProjectCard(props) {
   return (
-    <div className="w-full min-h-[400px] rounded-xl shadow-blue px-3 py-5 flex flex-col justify-between">
+    <div
+      data-aos="fade-right"
+      className="w-full min-h-[400px] rounded-xl shadow-blue px-3 py-5 flex flex-col justify-between"
+    >
       <header className="grid gap-3">
         <div className="flex items-center justify-between mb-4">
           <i class="bx bx-folder text-5xl text-darkBlue"></i>

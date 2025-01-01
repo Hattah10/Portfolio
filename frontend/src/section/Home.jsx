@@ -16,7 +16,7 @@ export default function Home() {
         <MobileWave />
       </div>
       {/* content */}
-      <div className="flex flex-col xs:gap-6 ">
+      <div data-aos="fade-right" className="flex flex-col xs:gap-6 ">
         {" "}
         <div className="flex items-center gap-3">
           <hr className="w-5 lg:w-10 border-2 rounded-xl border-darkBrown" />{" "}
@@ -40,10 +40,11 @@ export default function Home() {
         <div className="mt-8">
           {" "}
           <button
+            onClick={() => (window.location.href = "#contact")}
             type="button"
             className="border-2 border-darkBlue text-darkBlue px-4 py-2 rounded-md text-lg font-semibold"
           >
-            Checkout My Resume{" "}
+            Get in Touch
           </button>
         </div>{" "}
       </div>

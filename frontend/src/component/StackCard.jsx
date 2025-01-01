@@ -5,10 +5,15 @@ import { useTransform, motion } from "motion/react";
 
 export default function StackCard({ props, i, progress, range, target }) {
   const scale = useTransform(progress, range, [1, target]);
-
+  const isSmallScreen = window.innerWidth < 375;
   return (
     <motion.div
-      style={{ top: `calc(100px + ${i * 25}px)`, scale }}
+      style={{
+        top: isSmallScreen
+          ? `calc(20px + ${i * 20}px)`
+          : `calc(100px + ${i * 25}px)`,
+        scale,
+      }}
       className="lg:h-dvh   z-20 sticky  xs:top-12 "
     >
       {" "}
