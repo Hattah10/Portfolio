@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Resume from "./Resume";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -102,7 +103,9 @@ export default function Navbar() {
           data-aos="fade-down"
           className={`w-full max-w-screen-2xl 3xl:m-auto  h-full px-6  lg:px-10 flex items-center justify-between  `}
         >
-          <div>N.</div>
+          <div>
+            <Logo />
+          </div>
           <div className="hidden lg:block">
             <ul className="flex gap-8 font-medium text-white text-lg font-roboto tracking-widest">
               {list.map((item, index) => (
@@ -127,17 +130,17 @@ export default function Navbar() {
           {/* mobile menu */}
           <div
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="z-50 lg:hidden"
+            className=" lg:hidden"
           >
-            {" "}
-            {isMenuOpen ? (
-              <i className="bx bx-x text-5xl text-white transform transition-all duration-700 ease-in-out opacity-100 scale-100"></i>
+            <i className="bx bx-menu-alt-right text-5xl text-white scale-100"></i>
+            {/* {isMenuOpen ? (
+              <i className="bx bx-x text-5xl text-white transform transition-all duration-700 ease-in-out opacity-100 scale-100 z-50"></i>
             ) : (
               <i className="bx bx-menu-alt-right text-5xl text-white transform transition-all duration-700 ease-in-out opacity-100 scale-100"></i>
-            )}
+            )} */}
           </div>
         </div>
-        {/* bg */}
+        {/* background layout*/}
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
@@ -148,8 +151,15 @@ export default function Navbar() {
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           } transition-transform duration-500 ease-in-out lg:hidden flex justify-end`}
         >
-          <div className="bg-darkBlue h-full pt-[100px] w-[80%] z-20">
+          <div className="bg-darkBlue h-full  w-[80%] z-20">
             {" "}
+            <div className="h-[100px] flex justify-end items-center px-6">
+              {" "}
+              <i
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="bx bx-x text-5xl text-white transform transition-all duration-700 ease-in-out opacity-100 scale-100 z-50"
+              ></i>
+            </div>
             <ul className=" w-full flex flex-col text-center gap-y-10 font-bold text-white md:text-lg font-roboto tracking-widest">
               {list.map((item, index) => (
                 <li key={index} className="px-8">

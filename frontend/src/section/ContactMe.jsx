@@ -53,7 +53,7 @@ export default function ContactMe() {
           <div>
             {" "}
             <HeadingSection
-              heading={"Let's work together"}
+              heading={"Get In Touch"}
               style="text-3xl text-center"
             />
             <p className="text-center text-gray-600 my-4">
