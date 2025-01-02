@@ -1,48 +1,29 @@
 import React from "react";
-import arduino from "../assets/images/arduino2.svg";
-import laravel from "../assets/images/laravel.svg";
+import { TechnologyData } from "../data/Technology";
 
 export default function TechnologyCard({ row }) {
-  const technology = [
-    { row: 1, name: "HTML", icon: "bx bxl-html5" },
-    { row: 1, name: "CSS", icon: "bx bxl-css3" },
-    { row: 1, name: "Tailwind", icon: "bx bxl-tailwind-css" },
-
-    { row: 1, name: "Bootsrap", icon: "bx bxl-bootstrap" },
-    { row: 1, name: "Javascript", icon: "bx bxl-javascript" },
-
-    { row: 2, name: "Python", icon: "bx bxl-python" },
-    { row: 2, name: "PHP", icon: "bx bxl-php" },
-    { row: 2, name: "Laravel", image: laravel },
-    { row: 2, name: "Django", icon: "bx bxl-django" },
-    { row: 2, name: "React", icon: "bx bxl-react" },
-    { row: 2, name: "Github", icon: "bx bxl-git" },
-    { row: 2, name: "Arduino", image: arduino },
-
-    { row: 1, name: "Firebase", icon: "bx bxl-firebase" },
-  ];
-
   return (
     <>
-      {technology
-        .filter((item) => item.row === row)
-        .map((item, index) => (
-          <div
-            key={index}
-            className="capitalize w-full  px-3 py-2 bg-lightBlue rounded-xl font-medium tracking-widest font-montserrat text-gray-700 flex items-center gap-1"
-          >
-            {item.icon ? (
-              <i className={`${item.icon} text-4xl text-normalBlue`}></i>
-            ) : item.image ? (
+      {TechnologyData.filter((item) => item.row === row).map((item, index) => (
+        <div
+          key={index}
+          className="capitalize w-full  px-3 py-2 bg-lightBlue rounded-xl font-medium tracking-widest font-montserrat text-gray-700 flex items-center gap-1 "
+        >
+          {item.icon ? (
+            <i className={`${item.icon} text-4xl text-normalBlue`}></i>
+          ) : item.image ? (
+            <div className=" w-10 h-10 flex-shrink">
+              {" "}
               <img
                 src={item.image}
-                className=" w-5 h-5 lg:w-10 lg:h-10 shrink-0"
+                className=" w-full h-full  object-cover object-center"
               />
-            ) : null}
+            </div>
+          ) : null}
 
-            <span>{item.name}</span>
-          </div>
-        ))}
+          <p>{item.name}</p>
+        </div>
+      ))}
     </>
   );
 }
