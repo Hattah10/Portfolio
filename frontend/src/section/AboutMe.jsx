@@ -21,7 +21,10 @@ export default function AboutMe() {
           >
             <Profile />
           </div>
-          <div data-aos="fade-up" className="grid gap-2 mt-10 text-pretty ">
+          <div
+            data-aos="fade-up"
+            className="grid gap-2 mt-10 text-pretty text-lg "
+          >
             {" "}
             <p>
               <strong>
