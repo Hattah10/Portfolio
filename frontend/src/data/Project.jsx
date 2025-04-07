@@ -42,7 +42,7 @@ export const recentProject = [
     ],
     image: onlinJob,
     github: "",
-    externalLink: "",
+    externalLink: "https://skillsculpt.site/",
   },
 
   // {
