@@ -37,7 +37,7 @@ export default function AboutMe() {
               deployment, I love every step of creating web applications that
               meet client needs while ensuring an excellent user experience.
             </p>
-            <p>
+            {/* <p>
               In 2024, I gained valuable hands-on experience as a Web
               Development Intern, where I contributed to building and optimizing
               web applications for real-world projects. During the same year, I
@@ -46,7 +46,7 @@ export default function AboutMe() {
               experiences deepened my understanding of the development process,
               enhanced my technical skills, and strengthened my ability to
               communicate with clients effectively.
-            </p>
+            </p> */}
             {/* <p>
               Additionally, I have a keen interest in working with Arduino
               projects, as I enjoy creating practical solutions that can be
